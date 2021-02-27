@@ -1,5 +1,6 @@
 package com.glowman554.block;
 
+import com.glowman554.block.utils.FileUtils;
 import com.glowman554.block.world.Chunk;
 import com.glowman554.block.world.World;
 
@@ -45,6 +46,23 @@ public class ServerMain {
                 switch (text) {
                     case "ge":
                         printWriter.println(event);
+                        break;
+                    case "gw":
+                        printWriter.println(world.save());
+                        break;
+                    case "sw":
+                        FileUtils.writeFile(ServerMain.world.save(), "world.msave");
+                        System.out.println("Save done!");
+                        break;
+                    case "lw":
+                        world.load(FileUtils.readFile("world.msave"));
+                        System.out.println("Load done!");
+                        break;
+                    case "es":
+                        System.exit(0);
+                        break;
+                    case "gp":
+                        printWriter.println(players);
                         break;
                 }
 
