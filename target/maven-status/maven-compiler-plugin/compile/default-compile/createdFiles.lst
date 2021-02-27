@@ -1,0 +1,16 @@
+com\glowman554\block\world\Chunk.class
+com\glowman554\block\block\GrassBlock.class
+com\glowman554\block\utils\FileUtils.class
+com\glowman554\block\block\GlassBlock.class
+com\glowman554\block\block\StoneBlock.class
+com\glowman554\block\ServerMain.class
+com\glowman554\block\world\World.class
+com\glowman554\block\block\Block.class
+com\glowman554\block\world\Chunk$1.class
+com\glowman554\block\block\WoodBlock.class
+com\glowman554\block\block\DirtBlock.class
+com\glowman554\block\block\BerryBlock.class
+com\glowman554\block\block\Block$Type.class
+com\glowman554\block\ServerConsole.class
+com\glowman554\block\block\TestBlock.class
+com\glowman554\block\block\LeavesBlock.class
