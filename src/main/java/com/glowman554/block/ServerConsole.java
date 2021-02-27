@@ -28,6 +28,12 @@ public class ServerConsole extends Thread {
                     case "players":
                         System.out.println(ServerMain.players);
                         break;
+                    case "help":
+                        System.out.println("exit, save, load, players, help");
+                        break;
+                    default:
+                        System.out.println("Command not found!");
+                        break;
                 }
             }
         } catch (Exception e) {

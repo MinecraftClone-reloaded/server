@@ -27,6 +27,18 @@ public class ServerMain {
             port = Integer.parseInt(args[0]);
         }
 
+        Runtime.getRuntime().addShutdownHook(new Thread() {
+            @Override
+            public synchronized void start() {
+                try {
+                    FileUtils.writeFile(ServerMain.world.save(), "world.msave");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                System.out.println("Save done!");
+            }
+        });
+
         try (ServerSocket serverSocket = new ServerSocket(port)) {
             System.out.println(String.format("Server is listening on port: %d", port));
             new ServerConsole().start();
