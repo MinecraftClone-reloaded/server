@@ -92,7 +92,7 @@ public class ServerMain {
                 if(text.contains("sb")) {
                     String[] temp = text.split(" ");
                     event = text;
-                    world.setBlock(temp[1], Integer.parseInt(temp[2]), Integer.parseInt(temp[3]), Integer.parseInt(temp[4]));
+                    world.setBlock(temp[1], Integer.parseInt(temp[2]), Integer.parseInt(temp[3]), Integer.parseInt(temp[4]), Integer.parseInt(temp[5]), Integer.parseInt(temp[6]));
                 }
 
                 if(text.contains("lp")) {

@@ -46,9 +46,10 @@ public class World {
         }
     }
 
-    public void setBlock(String block, int x, int y, int z) {
-        int chunkX = (int) (x / Chunk.chunk_size);
-        int chunkY = (int) (z / Chunk.chunk_size);
+    public void setBlock(String block, int x, int y, int z, int chunkX, int chunkY) {
+
+
+        //System.out.println(String.format("%d %d, %d %d %d", chunkX, chunkY, x, y, z));
 
         if(world[chunkX][chunkY] != null) {
             world[chunkX][chunkY].setBlock(block, x, y, z);
