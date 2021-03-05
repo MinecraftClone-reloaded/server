@@ -1,5 +1,9 @@
 package com.glowman554.block;
 
+import com.glowman554.block.command.CommandManager;
+import com.glowman554.block.command.impl.ExitCommand;
+import com.glowman554.block.command.impl.LoadCommand;
+import com.glowman554.block.command.impl.SaveCommand;
 import com.glowman554.block.utils.FileUtils;
 import com.glowman554.block.world.Chunk;
 import com.glowman554.block.world.World;
@@ -18,8 +22,15 @@ public class ServerMain {
     private static String event = "";
     private static int port;
 
+    public static CommandManager commandManager;
+
     public static void main(String[] args) {
         world = new World();
+
+        commandManager = new CommandManager();
+        commandManager.registerCommand("exit", "Exit the server", new ExitCommand());
+        commandManager.registerCommand("load", "Load the world", new LoadCommand());
+        commandManager.registerCommand("save", "Save the world", new SaveCommand());
 
         if(args.length != 1) {
             port = 90;

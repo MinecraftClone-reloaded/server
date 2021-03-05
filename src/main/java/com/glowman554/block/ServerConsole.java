@@ -1,6 +1,6 @@
 package com.glowman554.block;
 
-import com.glowman554.block.utils.FileUtils;
+import com.glowman554.block.command.CommandEvent;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -13,28 +13,7 @@ public class ServerConsole extends Thread {
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
                 String command = bufferedReader.readLine();
 
-                switch (command) {
-                    case "exit":
-                        System.exit(0);
-                        break;
-                    case "save":
-                        FileUtils.writeFile(ServerMain.world.save(), "world.msave");
-                        System.out.println("Save done!");
-                        break;
-                    case "load":
-                        ServerMain.world.load(FileUtils.readFile("world.msave"));
-                        System.out.println("Load done!");
-                        break;
-                    case "players":
-                        System.out.println(ServerMain.players);
-                        break;
-                    case "help":
-                        System.out.println("exit, save, load, players, help");
-                        break;
-                    default:
-                        System.out.println("Command not found!");
-                        break;
-                }
+                ServerMain.commandManager.onCommand(new CommandEvent(command, command.split(" ")[0], CommandEvent.getArguments(command.split(" "))));
             }
         } catch (Exception e) {
             System.out.println("Console Exception: " + e.getMessage());
