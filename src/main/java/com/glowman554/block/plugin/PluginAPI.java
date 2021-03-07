@@ -15,11 +15,11 @@ public class PluginAPI {
     private static List<ScriptObjectMirror> timer_events = new ArrayList<>();
 
     public static void addCommand(String command, String help, String help_long, ScriptObjectMirror command_executor) {
-        ServerMain.commandManager.registerCommand(command, help_long, new PluginCommand(help, command_executor));
+        ServerMain.commandManager.registerCommand(command, help, new PluginCommand(help_long, command_executor));
     }
 
     public static void addCommand(String command, String help, ScriptObjectMirror command_executor) {
-        ServerMain.commandManager.registerCommand(command, "Not specified!", new PluginCommand(help, command_executor));
+        ServerMain.commandManager.registerCommand(command, help, new PluginCommand("Not specified!", command_executor));
     }
 
     public static void save() {
