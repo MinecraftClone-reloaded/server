@@ -20,4 +20,6 @@ RUN wget https://github.com/MinecraftClone-reloaded/example-plugins/raw/main/aut
 
 WORKDIR /server/target
 
+RUN mkdir backup
+
 CMD java -jar server.jar
