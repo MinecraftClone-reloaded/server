@@ -17,6 +17,7 @@ WORKDIR /server/target/plugins
 
 RUN wget https://github.com/MinecraftClone-reloaded/example-plugins/raw/main/auto-backup.js
 RUN wget https://github.com/MinecraftClone-reloaded/example-plugins/raw/main/auto-load.js
+RUN wget https://github.com/MinecraftClone-reloaded/example-plugins/raw/main/startup-message.js
 
 WORKDIR /server/target
 
