@@ -1,6 +1,7 @@
 package com.glowman554.block.plugin;
 
 import com.glowman554.block.ServerMain;
+import com.glowman554.block.discord.WebHookAPI;
 import com.glowman554.block.utils.FileUtils;
 import jdk.nashorn.api.scripting.ScriptObjectMirror;
 
@@ -80,6 +81,13 @@ public class PluginAPI {
                 System.out.println(String.format("Oh no the event %s is not implemented!", what));
                 break;
         }
+    }
+
+    public static void sendHookMessage(String hook, String what) throws IOException {
+        WebHookAPI webHookAPI = new WebHookAPI(hook);
+        webHookAPI.setUsername("Server");
+        webHookAPI.setContent(what);
+        webHookAPI.execute();
     }
 
     public static void playerLoginEvent(String who) {
