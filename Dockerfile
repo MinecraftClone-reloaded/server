@@ -1,6 +1,7 @@
-FROM alpine
+FROM debian
 
-RUN apk --no-cache add git maven openjdk11-jdk
+RUN apt update
+RUN apt install git maven openjdk-11-jdk -y
 
 RUN git clone https://github.com/MinecraftClone-reloaded/server
 
