@@ -2,6 +2,7 @@ FROM debian
 
 RUN apt update
 RUN apt install git maven openjdk-11-jdk -y
+RUN apt install wget -y
 
 RUN git clone https://github.com/MinecraftClone-reloaded/server
 
